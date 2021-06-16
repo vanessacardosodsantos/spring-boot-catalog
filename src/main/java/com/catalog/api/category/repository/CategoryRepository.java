@@ -1,4 +1,4 @@
-package com.catalog.api.category.service;
+package com.catalog.api.category.repository;
 
 import com.catalog.api.category.model.Category;
 import org.springframework.data.jpa.repository.JpaRepository;

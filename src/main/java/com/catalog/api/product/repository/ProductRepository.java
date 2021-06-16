@@ -1,4 +1,4 @@
-package com.catalog.api.product;
+package com.catalog.api.product.repository;
 
 import com.catalog.api.product.model.Product;
 import org.springframework.data.jpa.repository.JpaRepository;

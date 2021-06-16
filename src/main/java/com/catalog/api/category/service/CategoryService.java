@@ -1,6 +1,7 @@
 package com.catalog.api.category.service;
 
 import com.catalog.api.category.model.Category;
+import com.catalog.api.category.repository.CategoryRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

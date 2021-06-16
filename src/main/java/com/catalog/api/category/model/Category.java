@@ -1,16 +1,17 @@
 package com.catalog.api.category.model;
 
 import com.catalog.api.product.model.Product;
-import org.springframework.data.annotation.Id;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -27,7 +28,7 @@ public class Category {
     @OneToMany(cascade = {CascadeType.ALL, CascadeType.REMOVE})
     @JoinColumn(name = "id_product")
     @Column
-    private Product product;
+    private List<Product> product;
 
     public Long getId() {
         return id;
