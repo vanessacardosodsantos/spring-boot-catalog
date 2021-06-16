@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 
 public class ProductResponse {
 
-    private String id;
+    private Long id;
     private String name;
     private String description;
     private BigDecimal price;
@@ -20,7 +20,7 @@ public class ProductResponse {
         this.discount = product.getDiscount();
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 

@@ -1,18 +1,29 @@
 package com.catalog.api.product.model;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Table;
 import java.math.BigDecimal;
 
-@Document(collection = "product")
+@Entity
+@Table(name = "product")
 public class Product {
 
     @Id
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
+    private Long id;
+    @Column
     private String name;
+    @Column
     private String description;
+    @Column
     private BigDecimal price;
+    @Column
     private BigDecimal discount;
 
     public Product(String name, String description, BigDecimal price, BigDecimal discount) {
@@ -22,7 +33,7 @@ public class Product {
         this.discount = discount;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
@@ -40,5 +51,8 @@ public class Product {
 
     public BigDecimal getDiscount() {
         return discount;
+    }
+
+    public Product() {
     }
 }
