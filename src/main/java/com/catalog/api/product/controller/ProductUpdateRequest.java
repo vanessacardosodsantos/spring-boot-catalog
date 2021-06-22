@@ -1,17 +1,13 @@
 package com.catalog.api.product.controller;
 
-import com.catalog.api.provider.model.Provider;
-
 import java.math.BigDecimal;
-import java.util.List;
 
-public class ProductRequest {
+public class ProductUpdateRequest {
 
     private String name;
     private String description;
     private BigDecimal price;
     private BigDecimal discount;
-    private List<Provider> provider;
 
     public String getName() {
         return name;
@@ -43,13 +39,5 @@ public class ProductRequest {
 
     public void setDiscount(BigDecimal discount) {
         this.discount = discount;
-    }
-
-    public List<Provider> getProvider() {
-        return provider;
-    }
-
-    public void setProvider(List<Provider> provider) {
-        this.provider = provider;
     }
 }

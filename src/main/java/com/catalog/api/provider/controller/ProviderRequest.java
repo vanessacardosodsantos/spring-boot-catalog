@@ -7,7 +7,7 @@ public class ProviderRequest {
     private String name;
     private String email;
 
-    public Provider to(){
+    public Provider to() {
         return new Provider(this.name, this.email);
     }
 
