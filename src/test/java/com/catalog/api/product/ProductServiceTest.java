@@ -14,6 +14,7 @@ import org.mockito.Mock;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.BDDMockito.given;
@@ -50,13 +51,32 @@ public class ProductServiceTest {
 
             assertThat(result).isEqualTo(productSaved);
         }
+    }
 
+    @Nested
+    @DisplayName("find product")
+    class FindProduct {
 
+        @Test
+        @DisplayName("should list products by provider id")
+        void shouldListProducts() {
+            Long providerId = 1L;
+            Product product = productAndProvider();
+            given(productRepository.findByProviderId(providerId)).willReturn(Optional.of(product));
+
+            List<Product> result = productService.findProductsByProvider(providerId);
+            assertThat(result.get(0).getName()).isEqualTo("celular");
+        }
     }
 
     public Product createProduct() {
-        return new Product(1L,"celular", "celular de última geração",
+        return new Product(1L, "celular", "celular de última geração",
                 BigDecimal.valueOf(1400.00), BigDecimal.valueOf(50.00), List.of(provider()));
+    }
+
+    public Product productAndProvider() {
+        return new Product(1L, "celular", "celular de última geração",
+                BigDecimal.valueOf(1400.00), BigDecimal.valueOf(50.00), List.of(provider2()));
     }
 
     public Product request(ProductRequest request) {
@@ -65,10 +85,15 @@ public class ProductServiceTest {
         request.setPrice(BigDecimal.valueOf(1500.00));
         request.setDiscount(BigDecimal.valueOf(100.00));
         request.setProvider(List.of(provider()));
-        return new Product(request.getName(), request.getDescription(),request.getPrice(), request.getDiscount(), request.getProvider());
+        return new Product(request.getName(), request.getDescription(), request.getPrice(), request.getDiscount(), request.getProvider());
     }
 
     public Provider provider() {
         return new Provider("celular", "vanessacardoso@gmail.com");
     }
+
+    public Provider provider2() {
+        return new Provider(1L, "celular", "vanessacardoso@gmail.com");
+    }
+
 }
