@@ -12,9 +12,10 @@ ex: 30 (para 30%)
 
 # Getting Started
 `> maven clean install` 
+Build project
 
 ## Resources
-* H2: http://localhost:8080/h2-console (adicionar DataBse gerado em H2ConsoleAutoConfiguration)
+* H2: http://localhost:8080/h2-console (adicionar DataBase gerado em H2ConsoleAutoConfiguration)
 
 ### Stack
 Informações sobre as tecnologias usada na aplicação:
