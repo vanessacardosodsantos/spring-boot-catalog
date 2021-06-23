@@ -23,3 +23,8 @@ Informações sobre as tecnologias usada na aplicação:
 * Spring boot 2.5.1
 * Banco de dados em memória H2 
 * JPA/Hibernate ORM core version 5.4.32.Final
+
+## TODO
+* Aumentar a cobertura de testes unitários
+* Adicionar documentação Swagger - Spring Fox
+* Adicionar tratamento de erros com ExpectionHandler
