@@ -10,6 +10,9 @@ Serviço em RESTFul CRUD que gerencia produtos, categorias e seus fornecedores e
 * listar os produtos com desconto acima de um valor informado por parâmetro -
 ex: 30 (para 30%)
 
+## Modelagem
+![This is a alt text.](/image/bd.jpeg "This is a sample image.")
+
 # Getting Started
 `> maven clean install` 
 * ` Build project`
