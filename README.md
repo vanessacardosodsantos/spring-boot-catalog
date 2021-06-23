@@ -1,6 +1,6 @@
 # Catalog-service
 
-Serviço em RESTFul que gerencia produtos, categorias e seus fornecedores em modelagem JPA.
+Serviço em RESTFul CRUD que gerencia produtos, categorias e seus fornecedores em modelagem JPA.
 
 ## Funcionalidades
 * adicionar fornecedores para um produto;
@@ -12,7 +12,7 @@ ex: 30 (para 30%)
 
 # Getting Started
 `> maven clean install` 
-Build project
+` Build project`
 
 ## Resources
 * H2: http://localhost:8080/h2-console (adicionar DataBase gerado em H2ConsoleAutoConfiguration)
